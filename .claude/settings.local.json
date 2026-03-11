@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"firebase\\\\|auth\\\\|api\\\\|server\\\\|backend\\\\|database\\\\|db\\\\|supabase\" /Users/marklee/practice/tmp_claude_project/claude_code_treasure_game-initial/src --include=\"*.ts\" --include=\"*.tsx\" --include=\"*.js\" 2>/dev/null | head -20)",
+      "Bash(ls /Users/marklee/practice/tmp_claude_project/claude_code_treasure_game-initial/tsconfig* 2>/dev/null; echo \"---\"; cat /Users/marklee/practice/tmp_claude_project/claude_code_treasure_game-initial/.gitignore 2>/dev/null | head -20)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "Bash(lsof -ti:3000,3001 2>/dev/null | xargs kill -9 2>/dev/null; echo \"done\")",
+      "Bash(npm run:*)",
+      "Bash(kill 9611 9670)",
+      "Bash(ls -la src/components/AuthButton*)",
+      "Bash(find /Users/marklee/practice/tmp_claude_project/claude_code_treasure_game-initial -name \"*.sql\" -o -name \"*migration*\" -o -name \"*schema*\" 2>/dev/null | grep -v node_modules)",
+      "Bash(curl -s -X POST http://localhost:3001/api/auth/signup -H \"Content-Type: application/json\" -d '{\"username\":\"testuser123\",\"password\":\"test123456\"}' 2>&1)",
+      "Bash(curl -s -X POST http://localhost:3001/api/auth/signin -H \"Content-Type: application/json\" -d '{\"username\":\"testuser123\",\"password\":\"test123456\"}' 2>&1)",
+      "Bash(curl -s http://localhost:3000 2>&1 | head -20)",
+      "Bash(curl -s -X OPTIONS http://localhost:3001/api/auth/signin -H \"Origin: http://localhost:3000\" -H \"Access-Control-Request-Method: POST\" -H \"Access-Control-Request-Headers: Content-Type\" -D - -o /dev/null 2>&1)",
+      "Bash(curl -s http://localhost:3000/src/components/AuthButton.tsx 2>&1 | head -5)",
+      "Bash(curl -s http://localhost:3000/src/components/AuthButton.tsx 2>&1 | grep -c \"paddingTop\")",
+      "Bash(npx tsc:*)",
+      "Bash(sqlite3 /Users/marklee/practice/tmp_claude_project/claude_code_treasure_game-initial/data/treasure-game.db \"SELECT id, username, created_at FROM users;\")",
+      "Bash(sqlite3 /Users/marklee/practice/tmp_claude_project/claude_code_treasure_game-initial/data/treasure-game.db \"DELETE FROM game_scores WHERE user_id = 1; DELETE FROM users WHERE id = 1;\")",
+      "Bash(sqlite3 -header /Users/marklee/practice/tmp_claude_project/claude_code_treasure_game-initial/data/treasure-game.db \"SELECT id, score, treasure_found, played_at FROM game_scores WHERE user_id = 2;\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
