@@ -11,44 +11,30 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
-function decodeTokenPayload(token: string): { username: string } | null {
-  try {
-    const payload = token.split('.')[1];
-    return JSON.parse(atob(payload));
-  } catch {
-    return null;
-  }
-}
-
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<string | null>(null);
 
   useEffect(() => {
-    const token = localStorage.getItem('auth_token');
-    if (token) {
-      const payload = decodeTokenPayload(token);
-      if (payload?.username) {
-        setUser(payload.username);
-      } else {
-        localStorage.removeItem('auth_token');
-      }
+    const savedUser = localStorage.getItem('current_user');
+    if (savedUser) {
+      setUser(savedUser);
     }
   }, []);
 
   const signin = async (username: string, password: string) => {
     const data = await api.signin(username, password);
-    localStorage.setItem('auth_token', data.token);
+    localStorage.setItem('current_user', data.username);
     setUser(data.username);
   };
 
   const signup = async (username: string, password: string) => {
     const data = await api.signup(username, password);
-    localStorage.setItem('auth_token', data.token);
+    localStorage.setItem('current_user', data.username);
     setUser(data.username);
   };
 
   const signout = () => {
-    localStorage.removeItem('auth_token');
+    localStorage.removeItem('current_user');
     setUser(null);
   };
 

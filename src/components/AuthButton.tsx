@@ -15,9 +15,8 @@ interface AuthForm {
 }
 
 interface ScoreRecord {
-  id: number;
   score: number;
-  treasureFound: number;
+  treasureFound: boolean;
   playedAt: string;
 }
 
@@ -135,7 +134,7 @@ export default function AuthButton() {
                       </span>
                     </div>
                     <span className="text-xs text-muted-foreground">
-                      {new Date(s.playedAt + 'Z').toLocaleString('zh-TW')}
+                      {new Date(s.playedAt).toLocaleString('zh-TW')}
                     </span>
                   </div>
                 ))}
